@@ -26,12 +26,12 @@ Compare the original guided filter [He et al. 2010] and the fast version [He et 
 
 |Filter type  |time (secs)|
 |-------------|-----------|
-|Original ($\sigma = 10$)    |   0.215  |
-|Original ($\sigma = 40$)    |   0.228  |
-|Original ($\sigma = 80$)    |   0.254  |
-|Fast version ($\sigma = 10$)    |  0.052 |
-|Fast version ($\sigma = 40$)    |  0.053 |
-|Fast version ($\sigma = 80$)    |  0.054 |
+|Original (sigma = 10)    |   0.215  |
+|Original (sigma = 40)    |   0.228  |
+|Original (sigma = 80)    |   0.254  |
+|Fast version (sigma = 10)    |  0.052 |
+|Fast version (sigma = 40)    |  0.053 |
+|Fast version (sigma = 80)    |  0.054 |
 
 
 ## Installation
