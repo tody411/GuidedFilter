@@ -1,5 +1,5 @@
 
-Guided Filter (Python)
+Guided Imaged Filtering Demo (Python)
 ====
 
 Simple python demos of Guided Image Filtering [He et al. 2010].
