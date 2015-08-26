@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 ## @package guided_filter.core.filters
 #
-#  guided_filter.core.filters utility package.
+#  Implementation of guided filter.
 #  @author      tody
 #  @date        2015/08/26
 
@@ -41,16 +41,19 @@ def _upSample(I, scale=2, shape=None):
     return cv2.resize(I, (w * scale, h * scale), interpolation=cv2.INTER_LINEAR)
 
 
-## Implementation Fast Guided Filter.
+## Fast guide filter.
 class FastGuidedFilter:
+    ## Constructor.
+    #  @param I Input guidance image. Color or gray.
+    #  @param sigma_space Filter sigma in the coordinate space.
+    #  @param sigma_range Filter sigma in the color space.
+    #  @param scale Down sampled scale.
     def __init__(self, I, sigma_space=5, sigma_range=0.4, scale=4):
         I_32F = to32F(I)
         self._I = I_32F
         h, w = I.shape[:2]
 
-        print "I", I.shape
         I_sub = _downSample(I_32F, scale)
-        print "I_sub", I_sub.shape
 
         self._I_sub = I_sub
         sigma_space = int(sigma_space / scale)
@@ -60,14 +63,13 @@ class FastGuidedFilter:
         else:
             self._guided_filter = GuidedFilterColor(I_sub, sigma_space, sigma_range)
 
+    ## Apply filter for the input image.
     def filter(self, p):
         p_32F = to32F(p)
-        print "p_32F", p_32F.shape
         shape_original = p.shape[:2]
 
         p_sub = _downSample(p_32F, shape=self._I_sub.shape[:2])
 
-        print "p_sub", p_sub.shape
         if _isGray(p_sub):
             return self._filterGray(p_sub, shape_original)
 
@@ -79,12 +81,17 @@ class FastGuidedFilter:
         return q
 
     def _filterGray(self, p_sub, shape_original):
-        ab_sub = self._guided_filter._computeAB(p_sub)
+        ab_sub = self._guided_filter._computeCoefficients(p_sub)
         ab = [_upSample(abi, shape=shape_original) for abi in ab_sub]
-        return self._guided_filter._computeLinearModel(ab, self._I)
+        return self._guided_filter._computeOutput(ab, self._I)
 
 
+## Guide filter.
 class GuidedFilter:
+    ## Constructor.
+    #  @param I Input guidance image. Color or gray.
+    #  @param sigma_space Filter sigma in the coordinate space.
+    #  @param sigma_range Filter sigma in the color space.
     def __init__(self, I, sigma_space=5, sigma_range=0.4):
         I_32F = to32F(I)
 
@@ -93,14 +100,21 @@ class GuidedFilter:
         else:
             self._guided_filter = GuidedFilterColor(I_32F, sigma_space, sigma_range)
 
+    ## Apply filter for the input image.
     def filter(self, p):
         return self._guided_filter.filter(p)
 
 
+## Common parts of guided filter.
+#
+#  This class is used by guided_filter class. GuidedFilterGray and GuidedFilterColor.
+#  Based on guided_filter._computeCoefficients, guided_filter._computeOutput,
+#  GuidedFilterCommon.filter computes filtered image for color and gray.
 class GuidedFilterCommon:
     def __init__(self, guided_filter):
         self._guided_filter = guided_filter
 
+    ## Apply filter for the input image.
     def filter(self, p):
         p_32F = to32F(p)
         if _isGray(p_32F):
@@ -114,11 +128,15 @@ class GuidedFilterCommon:
         return q
 
     def _filterGray(self, p):
-        ab = self._guided_filter._computeAB(p)
-        return self._guided_filter._computeLinearModel(ab, self._guided_filter._I)
+        ab = self._guided_filter._computeCoefficients(p)
+        return self._guided_filter._computeOutput(ab, self._guided_filter._I)
 
 
+## Guided filter for gray guidance image.
 class GuidedFilterGray:
+    #  @param I Input gray guidance image.
+    #  @param sigma_space Filter sigma in the coordinate space.
+    #  @param sigma_range Filter sigma in the color space.
     def __init__(self, I, sigma_space=5, sigma_range=0.4):
         self._sigma_space = 2 * sigma_space + 1
         self._sigma_range = sigma_range
@@ -136,7 +154,7 @@ class GuidedFilterGray:
         I_mean_sq = cv2.blur(I ** 2, (r, r))
         self._I_var = I_mean_sq - self._I_mean ** 2
 
-    def _computeAB(self, p):
+    def _computeCoefficients(self, p):
         r = self._sigma_space
         p_mean = cv2.blur(p, (r, r))
         p_cov = p_mean - self._I_mean * p_mean
@@ -146,12 +164,16 @@ class GuidedFilterGray:
         b_mean = cv2.blur(b, (r, r))
         return a_mean, b_mean
 
-    def _computeLinearModel(self, ab, I):
+    def _computeOutput(self, ab, I):
         a_mean, b_mean = ab
         return a_mean * I + b_mean
 
 
+## Guided filter for color guidance image.
 class GuidedFilterColor:
+    #  @param I Input color guidance image.
+    #  @param sigma_space Filter sigma in the coordinate space.
+    #  @param sigma_range Filter sigma in the color space.
     def __init__(self, I, sigma_space=5, sigma_range=0.2):
         self._sigma_space = 2 * sigma_space + 1
         self._sigma_range = sigma_range
@@ -202,7 +224,7 @@ class GuidedFilterColor:
         self._Igb_inv = Igb_inv
         self._Ibb_inv = Ibb_inv
 
-    def _computeAB(self, p):
+    def _computeCoefficients(self, p):
         r = self._sigma_space
         I = self._I
         Ir, Ig, Ib = I[:, :, 0], I[:, :, 1], I[:, :, 2]
@@ -229,7 +251,7 @@ class GuidedFilterColor:
 
         return ar_mean, ag_mean, ab_mean, b_mean
 
-    def _computeLinearModel(self, ab, I):
+    def _computeOutput(self, ab, I):
         ar_mean, ag_mean, ab_mean, b_mean = ab
 
         Ir, Ig, Ib = I[:, :, 0], I[:, :, 1], I[:, :, 2]

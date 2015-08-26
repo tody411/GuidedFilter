@@ -1,24 +1,13 @@
-
+from guided_filter.datasets.google_image import dataFile
 
 # -*- coding: utf-8 -*-
-## @package guided_filter.results.smooth_noise
+## @package guided_filter.results.performance
 #
-#  guided_filter.results.smooth_noise utility package.
+#  Simple performance test.
 #  @author      tody
 #  @date        2015/08/26
 
-import os
-import numpy as np
-import matplotlib.pyplot as plt
-
-from guided_filter.datasets.google_image import dataFile
-from guided_filter.results.results import resultFile
-from guided_filter.io_util.image import loadRGB
-from guided_filter.cv.image import to32F
-
-from guided_filter.core.filters import FastGuidedFilter
-
-def runSmoothNoiseResult(image_file):
+def performanceTest(image_file):
     image_name = os.path.basename(image_file)
     image_name = os.path.splitext(image_name)[0]
 
@@ -60,17 +49,16 @@ def runSmoothNoiseResult(image_file):
     plt.savefig(result_file)
 
 
-def runSmoothNoiseResults(data_names, data_ids):
+def performanceTests(data_names, data_ids):
     for data_name in data_names:
-        print "Smooth noise: %s" % data_name
+        print "Performance tests: %s" % data_name
         for data_id in data_ids:
             print "Data ID: %s" % data_id
             image_file = dataFile(data_name, data_id)
-            runSmoothNoiseResult(image_file)
-
+            performanceTest(image_file)
 
 if __name__ == '__main__':
-    data_names = ["apple", "tulip", "flower"]
+    data_names = ["apple", "flower", "tulip"]
     data_ids = [0, 1, 2]
 
-    runSmoothNoiseResults(data_names, data_ids)
+    performanceTests(data_names, data_ids)
