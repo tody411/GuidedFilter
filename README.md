@@ -9,7 +9,8 @@ The guided filter can perform edge-preserving smoothing filtering like the popul
 In this demo package, I also implemented **Fast Guided Filter** [He et al. 2015].
 
 ## Result
-Simple guided filter test with the following setting:
+
+### Simple guided filter test for noise image:
 
 * Original image as the guidance image.
 * Noise image from the original image.
@@ -18,6 +19,20 @@ Simple guided filter test with the following setting:
 ![apple_0](guided_filter/results/apple_0.png)
 ![flower_0](guided_filter/results/flower_0.png)
 ![tulip_1](guided_filter/results/tulip_1.png)
+
+### Performance
+
+Compare the original guided filter [He et al. 2010] and the fast version [He et al. 2015].
+
+|Filter type  |time (secs)|
+|-------------|-----------|
+|Original ($\sigma = 10$)    |   0.215  |
+|Original ($\sigma = 40$)    |   0.228  |
+|Original ($\sigma = 80$)    |   0.254  |
+|Fast version ($\sigma = 10$)    |  0.052 |
+|Fast version ($\sigma = 40$)    |  0.053 |
+|Fast version ($\sigma = 80$)    |  0.054 |
+
 
 ## Installation
 
@@ -54,7 +69,7 @@ Please run the following command from the shell.
     - main.py: Main module for testing.
     - results: Result images will be saved in the directory.
 
-### Test SOM Demo
+### Test Guided Filter Demo
 You can test the Guided Filter with the following command from ```guided_filter``` directory..
 ``` bash
   > python main.py
@@ -73,9 +88,9 @@ For a local copy, please use the following doxygen command from *doxygen* direct
   > doxygen doxygen_config
 ``` -->
 
-## Future tasks
+<!-- ## Future tasks
 
-* [ ] Performance tests.
+* [ ] Performance tests. -->
 
 ## License
 

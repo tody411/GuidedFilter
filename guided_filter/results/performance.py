@@ -7,47 +7,53 @@ from guided_filter.datasets.google_image import dataFile
 #  @author      tody
 #  @date        2015/08/26
 
+import os
+import numpy as np
+
+from guided_filter.io_util.image import loadRGB
+from guided_filter.cv.image import to32F
+from guided_filter.util.timer import timing_func, Timer
+from guided_filter.core.filters import GuidedFilter, FastGuidedFilter
+
+
+def performanceTestFilter(C_noise,  filter_name, filter, result):
+    t = Timer()
+    filter.filter(C_noise)
+    t.stop()
+    result[filter_name] = str(t)
+
+def filterVariations(C_32F):
+    sigmas = [10, 40, 80]
+    filter_types = {"Simple": GuidedFilter, "Fast": FastGuidedFilter}
+
+    filters = {}
+
+    for type_name, filter in filter_types.items():
+        for sigma in sigmas:
+            filter_name = type_name + "_%s" % (sigma)
+            filters[filter_name] = filter(C_32F, sigma_space=sigma)
+    return filters
+
 def performanceTest(image_file):
     image_name = os.path.basename(image_file)
     image_name = os.path.splitext(image_name)[0]
 
     C_8U = loadRGB(image_file)
     C_32F = to32F(C_8U)
-
-    aspect = C_32F.shape[0] / float(C_32F.shape[1])
-
-    fig_width = 10
-    fig_height = int(fig_width * aspect / 3) + 1
-    fig = plt.figure(figsize=(fig_width, fig_height))
-    fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.02, hspace=0.05)
-
-    plt.subplot(131)
-    plt.title("%s" % (image_name))
-    plt.imshow(C_32F)
-    plt.axis('off')
+    print "Image size: ", C_32F.shape[:2]
 
     h, w, cs = C_32F.shape
 
     C_noise = np.float32(C_32F + 0.3 * np.random.rand(h, w, cs))
     C_noise = np.clip(C_noise, 0.0, 1.0)
 
-    plt.subplot(132)
-    plt.title("Noise Image")
-    plt.imshow(C_noise)
-    plt.axis('off')
+    filters = filterVariations(C_32F)
+    result = {}
+    for filter_name, filter in filters.items():
+        performanceTestFilter(C_noise, filter_name, filter, result)
 
-    guided_filter = FastGuidedFilter(C_32F, sigma_space=10, sigma_range=0.05, scale=4)
-    C_smooth = guided_filter.filter(C_noise)
-    C_smooth = np.clip(C_smooth, 0.0, 1.0)
-
-    plt.subplot(133)
-    plt.title("Filtered Image")
-    plt.imshow(C_smooth)
-    plt.axis('off')
-
-    result_file = resultFile(image_name)
-    plt.savefig(result_file)
-
+    for filter_name, performance in sorted(result.items()):
+        print filter_name, performance
 
 def performanceTests(data_names, data_ids):
     for data_name in data_names:

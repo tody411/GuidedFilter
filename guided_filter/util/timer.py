@@ -10,36 +10,51 @@ import time
 
 
 class Timer(object):
-    def __init__(self, timerName, logger=None):
-        self.name = timerName
-        self.logger = logger
+    def __init__(self, timer_name="", output=False, logger=None):
+        self._name = timer_name
+        self._logger = logger
+        self._output = output
+        self._end_time = None
+        self.start()
+
+    def start(self):
+        self._start_time = time.time()
+
+    def stop(self):
+        self._end_time = time.time()
+
+    def seconds(self):
+        if self._end_time is None:
+            self.stop()
+        return self._end_time - self._start_time
+
+    def milliseconds(self):
+        return self.seconds() * 1000  # millisecs
+
+    def _secondsStr(self):
+        return "%s: %f s" % (self._name, self.seconds())
 
     def __enter__(self):
-        self.start = time.time()
+        self.start()
         return self
 
     def __exit__(self, *args):
-        self.end = time.time()
-        self.secs = self.end - self.start
-        self.msecs = self.secs * 1000  # millisecs
+        self.stop()
 
-        self.secStr = "%s: %f s" % (self.name, self.secs)
-        self.msecStr = "%s: %f ms" % (self.name, self.msecs)
+        if self._logger is not None:
+            self._logger.debug(self._secondsStr())
 
-        if self.logger is not None:
-            self.logger.debug(self.secStr)
-
-        else:
-            print self.secStr
+        if self._output:
+            print self._secondsStr()
 
     def __str__(self):
-        return self.secStr
+        return self._secondsStr()
 
 
-def timing_func(func=None, timerName=None, logger=None):
+def timing_func(func=None, timer_name=None, logger=None):
     def _decorator(func):
-        _timerName = timerName
-        if timerName is None:
+        _timerName = timer_name
+        if timer_name is None:
             _timerName = func.__name__
 
         import functools
@@ -47,7 +62,7 @@ def timing_func(func=None, timerName=None, logger=None):
         @functools.wraps(func)
         def _with_timing(*args, **kwargs):
 
-            with Timer(_timerName, logger) as t:
+            with Timer(_timerName, output=True, logger=logger) as t:
                 ret = func(*args, **kwargs)
 
             return ret
