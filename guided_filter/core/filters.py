@@ -6,45 +6,52 @@
 #  @author      tody
 #  @date        2015/08/26
 
-import os
 import numpy as np
-import scipy.misc
 import cv2
-import matplotlib.pyplot as plt
 
 from guided_filter.cv.image import to32F
-from guided_filter.util.timer import timing_func
-from guided_filter.datasets.google_image import dataFile
-from guided_filter.io_util.image import loadRGB
-from guided_filter.results.results import resultFile
 
 
+## Return if the input image is gray or not.
 def _isGray(I):
     return len(I.shape) == 2
 
 
-def _downSample(I, scale=4, size=None):
-    if size is not None:
-        return cv2.resize(I, size, interpolation=cv2.INTER_NEAREST)
+## Return down sampled image.
+#  @param scale (w/s, h/s) image will be created.
+#  @param shape I.shape[:2]=(h, w). numpy friendly size parameter.
+def _downSample(I, scale=4, shape=None):
+    if shape is not None:
+        h, w = shape
+        return cv2.resize(I, (w, h), interpolation=cv2.INTER_NEAREST)
 
     h, w = I.shape[:2]
-    return cv2.resize(I, (h / scale, w / scale), interpolation=cv2.INTER_NEAREST)
+    return cv2.resize(I, (w / scale, h / scale), interpolation=cv2.INTER_NEAREST)
 
 
-def _upSample(I, scale=2, size=None):
-    if size is not None:
-        return cv2.resize(I, size, interpolation=cv2.INTER_LINEAR)
+## Return up sampled image.
+#  @param scale (w*s, h*s) image will be created.
+#  @param shape I.shape[:2]=(h, w). numpy friendly size parameter.
+def _upSample(I, scale=2, shape=None):
+    if shape is not None:
+        h, w = shape
+        return cv2.resize(I, (w, h), interpolation=cv2.INTER_LINEAR)
 
     h, w = I.shape[:2]
-    return cv2.resize(I, (h * scale, w * scale), interpolation=cv2.INTER_LINEAR)
+    return cv2.resize(I, (w * scale, h * scale), interpolation=cv2.INTER_LINEAR)
 
 
+## Implementation Fast Guided Filter.
 class FastGuidedFilter:
     def __init__(self, I, sigma_space=5, sigma_range=0.4, scale=4):
         I_32F = to32F(I)
         self._I = I_32F
         h, w = I.shape[:2]
+
+        print "I", I.shape
         I_sub = _downSample(I_32F, scale)
+        print "I_sub", I_sub.shape
+
         self._I_sub = I_sub
         sigma_space = int(sigma_space / scale)
 
@@ -53,13 +60,27 @@ class FastGuidedFilter:
         else:
             self._guided_filter = GuidedFilterColor(I_sub, sigma_space, sigma_range)
 
-#     @timing_func
     def filter(self, p):
-        p_sub = _downSample(p, size=self._I_sub.shape[:2])
+        p_32F = to32F(p)
+        print "p_32F", p_32F.shape
+        shape_original = p.shape[:2]
+
+        p_sub = _downSample(p_32F, shape=self._I_sub.shape[:2])
+
+        print "p_sub", p_sub.shape
+        if _isGray(p_sub):
+            return self._filterGray(p_sub, shape_original)
+
+        cs = p.shape[2]
+        q = np.array(p_32F)
+
+        for ci in range(cs):
+            q[:, :, ci] = self._filterGray(p_sub[:, :, ci], shape_original)
+        return q
+
+    def _filterGray(self, p_sub, shape_original):
         ab_sub = self._guided_filter._computeAB(p_sub)
-
-        ab = [_upSample(abi, size=p.shape[:2]) for abi in ab_sub]
-
+        ab = [_upSample(abi, shape=shape_original) for abi in ab_sub]
         return self._guided_filter._computeLinearModel(ab, self._I)
 
 
@@ -72,7 +93,6 @@ class GuidedFilter:
         else:
             self._guided_filter = GuidedFilterColor(I_32F, sigma_space, sigma_range)
 
-    @timing_func
     def filter(self, p):
         return self._guided_filter.filter(p)
 
@@ -109,7 +129,6 @@ class GuidedFilterGray:
     def filter(self, p):
         return self._filter_common.filter(p)
 
-    @timing_func
     def _initFilter(self):
         I = self._I
         r = self._sigma_space
@@ -143,7 +162,6 @@ class GuidedFilterColor:
     def filter(self, p):
         return self._filter_common.filter(p)
 
-    @timing_func
     def _initFilter(self):
         I = self._I
         r = self._sigma_space
@@ -222,55 +240,3 @@ class GuidedFilterColor:
              b_mean)
 
         return q
-
-
-def runGuidedFilterResult(image_file):
-    image_name = os.path.basename(image_file)
-    image_name = os.path.splitext(image_name)[0]
-
-    fig = plt.figure(figsize=(10, 8))
-    fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.05, hspace=0.05)
-    C_8U = loadRGB(image_file)
-    C_32F = to32F(C_8U)
-
-    plt.subplot(131)
-    plt.title("%s" % (image_name))
-    plt.imshow(C_32F)
-    plt.axis('off')
-
-    h, w, cs = C_32F.shape
-
-    C_noise = np.float32(C_32F + 0.3 * np.random.rand(h, w, cs))
-    C_noise = np.clip(C_noise, 0.0, 1.0)
-
-    plt.subplot(132)
-    plt.title("Noise Image")
-    plt.imshow(C_noise)
-    plt.axis('off')
-
-    guided_filter = GuidedFilter(C_32F, sigma_space=3)
-    C_smooth = guided_filter.filter(C_noise)
-    C_smooth = np.clip(C_smooth, 0.0, 1.0)
-
-    plt.subplot(133)
-    plt.title("Filtered Image")
-    plt.imshow(C_smooth)
-    plt.axis('off')
-
-    result_file = resultFile(image_name)
-    plt.savefig(result_file)
-
-def runGuidedFilterResults(data_names, data_ids):
-    for data_name in data_names:
-        print "Guided Filter: %s" % data_name
-        for data_id in data_ids:
-            print "Data ID: %s" % data_id
-            image_file = dataFile(data_name, data_id)
-            runGuidedFilterResult(image_file)
-
-
-if __name__ == '__main__':
-    data_names = ["apple", "tulip", "flower"]
-    data_ids = [0, 1, 2]
-
-    runGuidedFilterResults(data_names, data_ids)
