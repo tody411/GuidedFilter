@@ -60,3 +60,4 @@ doxygen/*.bat
 
 # Datasets
 guited_filter/datasets/*/*
+guited_filter/datasets/.cache
