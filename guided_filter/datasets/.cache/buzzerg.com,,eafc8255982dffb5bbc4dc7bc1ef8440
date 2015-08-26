@@ -1,0 +1,710 @@
+status: 200
+content-length: 55591
+x-middleton-display: orig_site_sol
+vary: Accept-Encoding,Cookie
+cache-control: max-age=3, must-revalidate
+set-cookie: __cfduid=dd5277b02398056e5228285024f27a6f21439990518;
+ expires=Thu, 18-Aug-16 13:21:58 GMT; path=/; domain=.buzzerg.com;
+ HttpOnly, ezouid=821707924; Path=/; Domain=buzzerg.com;
+ Expires=Tue, 08 Aug 2017 13:21:58 UTC, ezovid=1100806829; Path=/;
+ Domain=buzzerg.com, ezovuuid=fd3231b7-fd8d-4b97-7f77-9c739c4c9fe2; Path=/;
+ Domain=buzzerg.com, lp=http://buzzerg.com/; Path=/; Domain=buzzerg.com;
+ Expires=Wed, 19 Aug 2015 15:21:58 UTC
+-content-encoding: gzip
+date: Wed, 19 Aug 2015 13:21:58 GMT
+cf-ray: 21862a2411a90b6e-NRT
+response: 200
+wp-super-cache: Served supercache file from PHP
+content-location: http://buzzerg.com
+x-powered-by: PHP/5.4.34
+pagespeed: off
+server: cloudflare-nginx
+connection: keep-alive
+x-middleton-response: 200
+x-sol: orig
+content-type: text/html; charset=UTF-8
+display: orig_site_sol
+-varied-accept-encoding: gzip, deflate
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<!--[if IE ]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+	<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d2bfa6bf6858eb86b4142a3f5ddecc6d",petok:"90e32c7ddb7f217a51c2136338a70c060f5eb796-1439990518-1800",betok:"5851e165d085b0bec9ebe37c4179d0d078622886-1439990518-120",zone:"buzzerg.com",rocket:"0",apps:{"ga_key":{"ua":"UA-21003894-10","ga_bs":"1"},"abetterbrowser":{"ie":"6"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=e9627cd26a/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<title>BUZZERG | Buzzing News | Trending Articles | Viral Content | Fascinating Lists and Facts.</title>
+		<link rel="icon" href="http://buzzerg.com/wp-content/uploads/2014/11/favicon.ico" type="image/x-icon" />
+<!--iOS/android/handheld specific -->
+<link rel="apple-touch-icon" href="http://buzzerg.com/wp-content/themes/sociallyviral/images/apple-touch-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta itemprop="name" content="BUZZERG" />
+    <meta itemprop="url" content="http://buzzerg.com" />
+    	<link rel="pingback" href="http://buzzerg.com/xmlrpc.php" />
+	<script type="text/javascript">document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/,'js' );</script><link rel="alternate" type="application/rss+xml" title="BUZZERG &raquo; Feed" href="http://buzzerg.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="BUZZERG &raquo; Comments Feed" href="http://buzzerg.com/comments/feed/" />
+<link rel='stylesheet' id='ehb_stylesheet-css'  href='http://buzzerg.com/wp-content/plugins/easy-heads-up-bar/css/ehu.css?ver=2.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='frizzly-styles-css'  href='http://buzzerg.com/wp-content/plugins/frizzly//assets/css/styles.css?ver=0.33' type='text/css' media='all' />
+<link rel='stylesheet' id='mts_wpshortcodes-css'  href='http://buzzerg.com/wp-content/plugins/wp-shortcode/css/wp-shortcode.css?ver=4.0.7' type='text/css' media='all' />
+<link rel='stylesheet' id='stylesheet-css'  href='http://buzzerg.com/wp-content/themes/sociallyviral/style.css?ver=4.0.7' type='text/css' media='all' />
+<style type='text/css'>
+
+		body, .sidebar.c-4-12, #commentform textarea, input#author, input#email, input#url {background-color:#ffffff; }
+		body {background-image: url( http://buzzerg.com/wp-content/themes/sociallyviral/images/nobg.png );}
+        .pace .pace-progress, #mobile-menu-wrapper ul li a:hover { background: #ac001f; }
+		.single_post a, .widget .textwidget a, #logo a, .pnavigation2 a, .sidebar.c-4-12 a:hover, footer .widget li a:hover, .sidebar.c-4-12 a:hover, .related-posts a:hover, .title a:hover, .comm, #tabber .inside li a:hover, .readMore a:hover, .fn a, a, span.author-posts a:hover { color:#ac001f; }	
+			nav a#pull, .mts-subscribe input[type='submit'], #move-to-top:hover, #navigation ul .current-menu-item a, .pagination a, #tabber ul.tabs li a.selected, .tagcloud a:hover, #navigation ul .sfHover a, .primary-navigation, #navigation ul ul, .single_post .thecategory, .single-prev-next a:hover, #commentform input#submit:hover, .contactform #submit:hover, .latestPost .latestPost-review-wrapper, .latestPost .review-type-circle.latestPost-review-wrapper, .post-label, .widget .review-total-only, #wpmm-megamenu .review-total-only { background-color:#ac001f; color: #fff!important; }
+        a:hover, .copyrights a:hover, .latestPost .title a:hover, span.author-posts a, .single_post .post-info a:hover { color: #ac001f; }
+        #searchform .fa-search, .currenttext, .pagination a:hover, .pagination .nav-previous a:hover, .pagination .nav-next a:hover, .single-prev-next a , #commentform input#submit, .contactform #submit, .tagcloud a { background: #ac001f; color: #fff; }
+        input#author:hover, input#email:hover, input#url:hover, #comment:hover, .contact-form input:hover, .contact-form textarea:hover { border-color: #ac001f; }
+		
+		
+		
+		.bypostauthor {padding: 3%!important; background: #FAFAFA; width: 94%!important;}
+		.bypostauthor:after { content: "Author"; position: absolute; right: -1px; top: -1px; padding: 1px 10px; background: #818181; color: #FFF; }
+		
+		
+			
+</style>
+<link rel='stylesheet' id='fontawesome-css'  href='http://buzzerg.com/wp-content/themes/sociallyviral/css/font-awesome.min.css?ver=4.0.7' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='http://buzzerg.com/wp-content/themes/sociallyviral/css/responsive.css?ver=4.0.7' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='http://buzzerg.com/wp-content/plugins/jetpack/css/jetpack.css?ver=3.2.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://buzzerg.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://buzzerg.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FrizzlySettings = {"modules":{"main":{"moduleHoverActive":1,"moduleLightboxActive":"0","moduleShortcodeActive":"0","activeModules":["main","buttonSettings","hover","advanced"]},"buttonSettings":{"pinterestImageDescription":["titleAttribute","altAttribute","postTitle","mediaLibraryDescription"],"generalUseFullImages":"0","generalDownloadImageDescription":"0","twitterHandle":""},"hover":{"imageSelector":".frizzly-hover-container img","minImageHeight":100,"minImageWidth":100,"hoverPanelPosition":"middle-middle","buttonSet":"default","theme":"default48","orientation":"horizontal","showOnHome":"1","showOnSingle":"1","showOnPage":"1","showOnBlog":"1","showOnLightbox":"1"},"lightbox":{"descriptionSource":["titleAttribute","altAttribute"]},"shortcode":{"beforeContent":"0","beforeContentShortcodeId":"","afterContent":"0","afterContentShortcodeId":""},"advanced":null},"buttonSets":[],"themes":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://buzzerg.com/wp-content/plugins/frizzly//assets/js/frizzly.min.js?ver=0.33'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mts_customscript = {"responsive":"1","nav_menu":"both"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://buzzerg.com/wp-content/themes/sociallyviral/js/customscript.js?ver=4.0.7'></script>
+<script type='text/javascript' src='http://html5shim.googlecode.com/svn/trunk/html5.js?ver=4.0.7'></script>
+<script type='text/javascript' src='http://buzzerg.com/wp-content/plugins/wp-shortcode/js/wp-shortcode.js?ver=4.0.7'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://buzzerg.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://buzzerg.com/wp-includes/wlwmanifest.xml" /> 
+<!--Theme by MyThemeShop.com-->
+<link rel='shortlink' href='http://wp.me/5lr4q' />
+<style type="text/css"></style>	<meta name="verifyownership" content="28211cea71f1d7245c209364988c2e42" />
+<!--[if IE 7]>
+<link rel="stylesheet" href="http://buzzerg.com/wp-content/plugins/wp-review/assets/css/wp-review-ie7.css">
+<![endif]-->
+
+<!-- BEGIN GADWP v4.3.6 Universal Tracking - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+
+<!-- END GADWP Universal Tracking -->
+
+<style type='text/css'>img#wpstats{display:none}</style>
+<style type="text/css">
+#logo a { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 44px; color: #33bcf2; }
+.primary-navigation li, .primary-navigation li a { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 18px; color: #ffffff;text-transform: uppercase; }
+.latestPost .title, .latestPost .title a { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 24px; color: #ac001f;line-height: 36px; }
+.single-title { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 38px; color: #ac001f;line-height: 53px; }
+body { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 16px; color: #0c0000; }
+.widget .widget-title { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 18px; color: #ac001f;text-transform: uppercase; }
+#sidebars .widget { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 16px; color: #ac001f; }
+.footer-widgets { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 14px; color: #ac001f; }
+h1 { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 38px; color: #0c0000; }
+h2 { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 34px; color: #0c0000; }
+h3 { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 30px; color: #0c0000; }
+h4 { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 28px; color: #0c0000; }
+h5 { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 24px; color: #0c0000; }
+h6 { font-family: 'Arial Black', Gadget, sans-serif; font-weight: normal; font-size: 20px; color: #0c0000; }
+</style>
+
+<!-- All in One SEO Pack 2.2.3.1 by Michael Torbert of Semper Fi Web Design[322,418] -->
+<meta name="description" itemprop="description" content="Your place for finding interesting news, trending articles, viral content and fascinating lists &amp; facts." />
+
+<meta name="keywords" itemprop="keywords" content="buzzerg, buzz, viral articles, viral news, viral images, interesting facts, amazing lists, factoids, science facts, science list, universe facts, universe list," />
+<link rel='next' href='http://buzzerg.com/page/2/' />
+
+<link rel="canonical" href="http://buzzerg.com/" />
+<!-- /all in one seo pack -->
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//buzzerg.com/?wordfence_logHuman=1&hid=955FDB61962B8B1E04D2423767CCC196');
+</script><script type="text/javascript">var ezouid = "821707924";</script><script type="text/javascript">window.google_analytics_uacct = "UA-64548033-45";</script><base href="http://buzzerg.com/"><!--[if lt IE 9]>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+<!--[if (gte IE 9) | (!IE)]><!-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!--<![endif]--><script src="http://cdn.buzzerg.com/utilcave_com/templates/js/ezjquery-noconflict.js"></script><script type='text/javascript'>
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+if(typeof $ !== "undefined")
+{
+$(document).ready(function($) {
+    var ezIgnoreTags = ['SCRIPT','IFRAME','STYLE','LINK','BODY','HEAD'];
+    $(document).bind('DOMNodeInserted', function(e) {  
+        var element = e.target;
+        
+        //move our before and after spans to be first or last sibling elements
+        var after_span = $(element).prev('.ezoic-after-el');
+        if(after_span != null)
+        {
+             after_span.insertAfter($(element));
+        }
+        var before_span = $(element).next('.ezoic-before-el');
+        if(before_span != null)
+        {
+             before_span.insertBefore($(element));
+        }
+        
+
+        if(ezIgnoreTags.indexOf(element.tagName) == -1)
+        {
+            if($(element).hasClass('ezoic-wrapper') == false && $(element).hasClass('ezoic-no-wrapper') == false)
+            {
+                if($(element).closest('.ezoic-no-wrapper').length < 1 && $(element).closest('.ezoic-ad').length < 1 && $(element).closest('.ezo_ad').length < 1 && $(element).closest('.ezoic-wrapper').length < 1  && $(element).css('position') != 'fixed' && $(element).css('position') != 'absolute')
+                {
+                    $(element).addClass('ezoic-wrapper');
+                    ezo_elements_to_check.push(element);
+                    ezo_resize_interval_count=0; //reset interval timer
+
+                    if($(element).hasClass('ez_wrap_ins') == false && $(element).parent().is('body'))
+                    {
+                        $(element).wrap("<ins class='ezoic-wrapper ez_wrap_ins'></ins>");
+                        $(element).css('max-width','none');
+                        var ezo_style = getComputedStyle(element);
+
+                        var rand_class = 'ezo_wrapper_'+Math.floor((Math.random()*100000)+1);
+
+                        var ezoTempStyle = document.createElement('style');
+                        ezoTempStyle.innerHTML = '.'+rand_class+'{'+ezo_style.cssText+'}';
+                        document.getElementsByTagName('head')[0].insertBefore(ezoTempStyle,document.getElementsByTagName('head')[0].firstChild)
+                        $(element).addClass('ez_wrap_ins');
+                        $(element).addClass(rand_class);
+                        $(element).unwrap('ins');
+                    }
+
+
+                }
+            }
+        }
+        
+        
+    });
+});
+}</script>
+
+<script>
+var old_jquery = null;
+var old_jquery_sign = null;
+function open_jquery_wrapper()
+{
+    if(typeof $ezJQuery != 'undefined')
+    {
+        old_jquery = jQuery;
+        old_jquery_sign = $;
+        $ = $ezJQuery;
+        jQuery = $ezJQuery;
+    }
+}
+function close_jquery_wrapper()
+{
+    if(typeof $ezJQuery != 'undefined')
+    {
+        $ = old_jquery_sign;
+        jQuery = old_jquery;
+    }
+}
+//minified table_resize_js.txt - http://refresh-sf.com/yui/
+function ez_get_widest_cells(c){var b=0;var d=0;var a=new Array();$ezJQuery("td,th",c).each(function(){if($ezJQuery(this).css("word-break")!="break-all"&&$ezJQuery(this).css("word-break")!="break-word"){if($ezJQuery(this).width()>b){b=$ezJQuery(this).width();d=0;a=new Array()}if($ezJQuery(this).width()==b){if($ezJQuery(this).data("ez_lpw")>d){d=$ezJQuery(this).data("ez_lpw");a=new Array()}if($ezJQuery(this).data("ez_lpw")==d){a.push(this)}}}});return a}function ez_scale_font(a){if($ezJQuery(a).children().length>0){$ezJQuery(a).children().each(function(){ez_scale_font(this)})}$ezJQuery(a).css("font-size",parseInt($ezJQuery(a).css("font-size"))-1)}function ez_get_min_font(a){var b=16;$ezJQuery("*",a).each(function(){if(parseInt($ezJQuery(this).css("font-size"))<b){b=parseInt($ezJQuery(this).css("font-size"))}});return b}function ez_get_max_font(b){var a=10;$ezJQuery("*",b).each(function(){if(parseInt($ezJQuery(this).css("font-size"))>a){a=parseInt($ezJQuery(this).css("font-size"))}});return a}function ez_get_max_padding(b){var a=0;$ezJQuery("td",b).each(function(){if(parseInt($ezJQuery(this).css("padding-left"))>a){a=parseInt($ezJQuery(this).css("padding-left"))}if(parseInt($ezJQuery(this).css("padding-right"))>a){a=parseInt($ezJQuery(this).css("padding-left"))}});return a}function ez_scale_padding(a){$ezJQuery("td",a).each(function(){if(parseInt($ezJQuery(this).css("padding-left"))>1){$ezJQuery(this).css("padding-left",parseInt($ezJQuery(this).css("padding-left"))-1)}if(parseInt($ezJQuery(this).css("padding-right"))>1){$ezJQuery(this).css("padding-right",parseInt($ezJQuery(this).css("padding-left"))-1)}})}var ez_word_break_tables=[];function ez_word_break_table(a){if(typeof $ezJQuery=="undefined"){ez_word_break_tables.push(a);if(ez_word_break_tables.length==1){ez_queue.push({method:run_ez_word_break_tables,priority:1})}}else{run_ez_word_break_table(a)}}function ez_reset_width(a){if($ezJQuery(a).data("ez-no-defined-width")===true){$ezJQuery(a).css("width","")}return 1}function run_ez_word_break_tables(){$ezJQuery.each(ez_word_break_tables,function(a,b){run_ez_word_break_table(b)})}function run_ez_word_break_table(a){var l=$ezJQuery("#ez_script_id_"+a).prev("table");var d=11;if($ezJQuery(l).data("ez-gwidth")!=null){var g=$ezJQuery(l).data("ez-gwidth");var m=false;if(String(g).indexOf("%")>=0){m=true;g=Math.ceil((parseInt(g)/100)*$ezJQuery(l).parent()[0].clientWidth)}if($ezJQuery(l).width()<=g){return ez_reset_width(l)}var b=true;if(m==false&&$ezJQuery(l).data("ez-no-defined-width")===true){b=false;$ezJQuery(l).css("width",g)}var j=false;$ezJQuery("td,th",l).each(function(){var q=$ezJQuery(this).clone().find("script").remove().end().text();var n=q.split(/[.,\/ -]/);var p=n.reduce(function(r,s){return r.length>s.length?r:s}).length;var i=ez_get_max_font(this);var o=p*i*0.6;$ezJQuery(this).data("ez_lpw",o);if($ezJQuery(this).width()>0&&o>($ezJQuery(this).width()*0.65)){j=true}});if(j==false){return ez_reset_width(l)}var c=ez_get_min_font(l);if(c==12){d=10}else{if(c==11){d=9}}while(c>d+1&&$ezJQuery(l).width()>g){var f=$ezJQuery(l).width();ez_scale_font(l);c--;if(f==$ezJQuery(l).width()){return ez_reset_width(l)}}if($ezJQuery(l).width()<=g){return ez_reset_width(l)}var k=ez_get_max_padding(l);var f=$ezJQuery(l).width();while(k>1&&$ezJQuery(l).width()>g){ez_scale_padding(l);k--;if($ezJQuery(l).width()<=g){return ez_reset_width(l)}}while(c>d&&$ezJQuery(l).width()>g){var f=$ezJQuery(l).width();ez_scale_font(l);c--;if(f==$ezJQuery(l).width()){return ez_reset_width(l)}}if($ezJQuery(l).width()<=g){return ez_reset_width(l)}var h=ez_get_widest_cells((l));while(h.length!=0&&$ezJQuery(l).width()>g){for(var e=0;e<h.length;e++){if(b===true){$ezJQuery(h[e]).css("width",$ezJQuery(h[e]).width())}$ezJQuery(h[e]).css("word-break","break-all");$ezJQuery(h[e]).css("word-break","break-word")}h=ez_get_widest_cells(l)}return ez_reset_width(l)}};
+</script>
+
+<!-- START EZHEAD -->
+<script type='text/javascript'>
+var soc_app_id = '0';
+var did = 5771;
+var ezdomain = 'buzzerg.com';
+var ezoicSearchable = 1;
+</script>
+<!---->
+<!-- END EZHEAD -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21003894-10']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+/* ]]> */
+</script>
+</head>
+<body id ="blog" class="home blog main" itemscope itemtype="http://schema.org/WebPage">      
+
+	<div class="main-container">
+		<header class="main-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<div class="container">
+				<div id="header">
+					<div class="logo-wrap">
+																						<h1 id="logo" class="image-logo" itemprop="headline">
+										<a href="http://buzzerg.com"><img src="http://buzzerg.com/wp-content/uploads/2014/11/2.4.2.png" alt="BUZZERG"></a>
+									</h1><!-- END #logo -->
+																		</div>
+					
+											<div class="header-search"><form method="get" id="searchform" class="search-form" action="http://buzzerg.com" _lpchecked="1">
+	<fieldset>
+		<input type="text" name="s" id="s" value="" placeholder="What are you looking for?"  />
+		<input id="search-image" class="sbutton" type="submit" value="" />
+		<i class="fa fa-search"></i>
+	</fieldset>
+</form></div>
+					
+											<div class="header-social">
+					        					            					                <a href="https://www.facebook.com/buzzerg" class="header-facebook" style="background: #375593"><span class="fa fa-facebook"></span></a>
+					            					        					            					                <a href="https://twitter.com/BUZZERGMedia" class="header-twitter" style="background: #0eb6f6"><span class="fa fa-twitter"></span></a>
+					            					        					            					                <a href="https://plus.google.com/u/0/b/105848381002857978300/105848381002857978300/posts" class="header-google-plus" style="background: #dd4b39"><span class="fa fa-google-plus"></span></a>
+					            					        					    </div>
+					
+																		<div class="primary-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+													<nav id="navigation" class="clearfix">
+								<a href="#" id="pull" class="toggle-mobile-menu">Menu</a>
+			        						        				<ul id="menu-zero" class="menu clearfix"><li id="menu-item-1098" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/science/">Science</a></li>
+<li id="menu-item-1097" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/history/">History</a></li>
+<li id="menu-item-1099" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/universe/">Universe</a></li>
+<li id="menu-item-1096" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/bizarre/">Bizarre</a></li>
+<li id="menu-item-1100" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/arts/">Arts</a></li>
+<li id="menu-item-1102" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="http://buzzerg.com/category/miscellaneous/">Miscellaneous</a>
+<ul class="sub-menu">
+	<li id="menu-item-1101" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://images.buzzerg.com">Picture and Images</a></li>
+	<li id="menu-item-1103" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/peopleandpolitics/">People &#038; Politics</a></li>
+	<li id="menu-item-1105" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/animal/">Animal</a></li>
+	<li id="menu-item-1104" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://buzzerg.com/category/sportsandentertainment/">Sports &#038; Entertainment</a></li>
+</ul>
+</li>
+</ul>			        						        		</nav>
+			        	</div>
+						<div class="clear" id="catcher"></div>
+			        
+				</div><!--#header-->
+			</div><!--.container-->        
+		</header><div id="page">
+    <div id="content_box">
+        <div class="custom-ad">
+            <script type="text/javascript">
+                google_ad_client = "ca-pub-8736626694839419";
+                google_ad_slot = "4292325944";
+                google_ad_width = 970;
+                google_ad_height = 250;
+            </script>
+            <!-- 970x250-zerg -->
+            <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+        </div>
+                                    <article
+                                class="latestPost excerpt featuredPost"
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/20-facts-of-history-that-dont-seem-like-they-can-be-true-but-they-are/" title="20 Facts of History That Don’t Seem Like They Can Be True – But They Are" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="770" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/143-770x297.jpg" class="attachment-featuredbig wp-post-image" alt="1" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/20-facts-of-history-that-dont-seem-like-they-can-be-true-but-they-are/"
+                                            title="20 Facts of History That Don’t Seem Like They Can Be True – But They Are">20 Facts of History That Don’t Seem Like They Can Be True – But They Are</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/bizarre/" title="View all posts in Bizarre"  itemprop="articleSection">Bizarre</a>, <a href="http://buzzerg.com/category/history/" title="View all posts in History"  itemprop="articleSection">History</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                        <article
+                                    class="latestPost excerpt homepage-widget last">
+                                    <div id="wp_subscribe-2" class="widget-home">            
+            <div class="wp-subscribe" id="wp-subscribe">
+                <h4 class="title">Get more stuff like this<br/> <span>in your inbox</span></h4>
+                <p class="text">Subscribe to our mailing list and get interesting stuff and updates to your email inbox.</p>
+
+                                
+                                        <form action="/?mailchimp_signup=1" method="post">
+                        <input class="email-field" type="text" value="" placeholder="Enter your email here" name="mailchimp_email">
+                        <input class="submit" name="submit" type="submit" value="Sign Up Now">
+                        <input type="hidden" name="widget_id" value="wp_subscribe-2" />
+                        <input type="hidden" id="_wpnonce" name="_wpnonce" value="0946c96ad3" /><input type="hidden" name="_wp_http_referer" value="/" />                    </form>
+                                    <div class="clear"></div>
+                
+                <p class="footer-text">we respect your privacy and take protecting it seriously</p>
+                
+            </div><!--subscribe_widget-->
+        
+        </div>                                </article><!--.post excerpt-->
+                                                            <article
+                                class="latestPost excerpt first "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/the-gate-to-hell/" title="The Gate To Hell" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/331-370x297.jpg" class="attachment-featured wp-post-image" alt="3" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/the-gate-to-hell/"
+                                            title="The Gate To Hell">The Gate To Hell</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/bizarre/" title="View all posts in Bizarre"  itemprop="articleSection">Bizarre</a>, <a href="http://buzzerg.com/category/travel/" title="View all posts in Travel"  itemprop="articleSection">Travel</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/the-boy-with-the-bizarre-illness/" title="The Boy With The Bizarre Illness" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/140-370x297.jpg" class="attachment-featured" alt="1" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/the-boy-with-the-bizarre-illness/"
+                                            title="The Boy With The Bizarre Illness">The Boy With The Bizarre Illness</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/bizarre/" title="View all posts in Bizarre"  itemprop="articleSection">Bizarre</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt last "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/ten-most-awesome-places-abandoned-by-humans/" title="Ten Most Awesome Places Abandoned By Humans" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/826-370x297.jpg" class="attachment-featured wp-post-image" alt="8" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/ten-most-awesome-places-abandoned-by-humans/"
+                                            title="Ten Most Awesome Places Abandoned By Humans">Ten Most Awesome Places Abandoned By Humans</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/bizarre/" title="View all posts in Bizarre"  itemprop="articleSection">Bizarre</a>, <a href="http://buzzerg.com/category/travel/" title="View all posts in Travel"  itemprop="articleSection">Travel</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt first "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/amazing-street-art-by-pejac/" title="Amazing Street Art By Pejac" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/11-370x297.png" class="attachment-featured wp-post-image" alt="1" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/amazing-street-art-by-pejac/"
+                                            title="Amazing Street Art By Pejac">Amazing Street Art By Pejac</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/arts/" title="View all posts in Arts"  itemprop="articleSection">Arts</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/ten-must-see-places-before-you-die/" title="Ten Must See Places Before You Die" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/726-370x297.jpg" class="attachment-featured wp-post-image" alt="7" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/ten-must-see-places-before-you-die/"
+                                            title="Ten Must See Places Before You Die">Ten Must See Places Before You Die</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/travel/" title="View all posts in Travel"  itemprop="articleSection">Travel</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt last "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/a-dream-land-up-north/" title="A Dream Land UP North" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/429-370x297.jpg" class="attachment-featured wp-post-image" alt="BWI-BLWS159675" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/a-dream-land-up-north/"
+                                            title="A Dream Land UP North">A Dream Land UP North</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/travel/" title="View all posts in Travel"  itemprop="articleSection">Travel</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt first "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/cats-wishes-to-be-someone-else-3-looks-like-dobby/" title="Cats Wishes To Be Someone Else. #3 Looks like Dobby" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/135-370x297.jpg" class="attachment-featured wp-post-image" alt="1" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/cats-wishes-to-be-someone-else-3-looks-like-dobby/"
+                                            title="Cats Wishes To Be Someone Else. #3 Looks like Dobby">Cats Wishes To Be Someone Else. #3 Looks like Dobby</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/animal/" title="View all posts in Animal"  itemprop="articleSection">Animal</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/mind-boggling-facts-about-china/" title="Mind Boggling Facts About China" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/528-370x297.jpg" class="attachment-featured wp-post-image" alt="5" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/mind-boggling-facts-about-china/"
+                                            title="Mind Boggling Facts About China">Mind Boggling Facts About China</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/miscellaneous/" title="View all posts in Miscellaneous"  itemprop="articleSection">Miscellaneous</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                                                    <article
+                                class="latestPost excerpt last "
+                                itemscope itemtype="http://schema.org/BlogPosting">
+                                <a href="http://buzzerg.com/the-human-heart-natures-exceptional-gift/" title="The Human Heart- Nature’s Exceptional Gift" rel="nofollow"
+                                   id="featured-thumbnail">
+                                    <div class="featured-thumbnail"><img width="370" height="297" src="http://buzzerg.com/wp-content/uploads/2014/11/134-370x297.jpg" class="attachment-featured wp-post-image" alt="1" title="" /></div>                                                                                                        </a>
+                                <header>
+                                    <h2 class="title front-view-title" itemprop="headline"><a
+                                            href="http://buzzerg.com/the-human-heart-natures-exceptional-gift/"
+                                            title="The Human Heart- Nature’s Exceptional Gift">The Human Heart- Nature’s Exceptional Gift</a></h2>
+                                                                            <div class="post-info">
+                                                                                            <span class="thetime updated"><i class="fa fa-calendar"></i> <span
+                                                        itemprop="datePublished">9 months ago</span></span>
+                                                                                                                                        <span class="thecategory"><i
+                                                        class="fa fa-tags"></i> <a href="http://buzzerg.com/category/science/" title="View all posts in Science"  itemprop="articleSection">Science</a></span>
+                                                                                    </div>
+                                                                    </header>
+                            </article><!--.post excerpt-->
+                        
+                        <!--Start Pagination-->
+                                                <div class="pagination">
+                            <ul>
+                                <li class="nav-previous"><a href="http://buzzerg.com/page/2/" rel="nofollow"><i class="fa fa-angle-left"></i> Previous</a></li>
+                                <li class="nav-next"></li>
+                            </ul>
+                        </div>
+                                            <!--End Pagination-->
+
+                        </div>
+	</div><!--#page-->
+</div><!--.main-container-->
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="container">
+                <div class="copyrights">
+            <!--start copyrights-->
+<div class="row" id="copyright-note">
+    <div class="copyright"><a href="http://buzzerg.com/" title="Buzzing News | Trending Articles | Viral Content | Fascinating Lists and Facts." rel="nofollow">BUZZERG</a> Copyright &copy; 2015. <a href="http://www.buzzerg.com/tos"> TOS & Privacy Policy </a>
+
+<a href="http://www.buzzerg.com/contact">Contact </a></div>
+    <a href="#blog" class="toplink" rel="nofollow"><i class="fa fa-angle-up"></i></a>
+    <div class="top">
+        <div class="footer-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav id="navigation" class="clearfix">
+                                    <ul id="menu-zero-1" class="menu clearfix"><li id="menu-item-1098" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1098"><a href="http://buzzerg.com/category/science/">Science</a></li>
+<li id="menu-item-1097" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1097"><a href="http://buzzerg.com/category/history/">History</a></li>
+<li id="menu-item-1099" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1099"><a href="http://buzzerg.com/category/universe/">Universe</a></li>
+<li id="menu-item-1096" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1096"><a href="http://buzzerg.com/category/bizarre/">Bizarre</a></li>
+<li id="menu-item-1100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1100"><a href="http://buzzerg.com/category/arts/">Arts</a></li>
+<li id="menu-item-1102" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1102"><a href="http://buzzerg.com/category/miscellaneous/">Miscellaneous</a>
+<ul class="sub-menu">
+	<li id="menu-item-1101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1101"><a href="http://images.buzzerg.com">Picture and Images</a></li>
+	<li id="menu-item-1103" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1103"><a href="http://buzzerg.com/category/peopleandpolitics/">People &#038; Politics</a></li>
+	<li id="menu-item-1105" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1105"><a href="http://buzzerg.com/category/animal/">Animal</a></li>
+	<li id="menu-item-1104" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1104"><a href="http://buzzerg.com/category/sportsandentertainment/">Sports &#038; Entertainment</a></li>
+</ul>
+</li>
+</ul>                            </nav>
+        </div>  
+    </div>
+</div>
+<!--end copyrights-->
+        </div> 
+    </div><!--.container-->
+</footer><!--footer-->
+<!--start footer code-->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NWV4PG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWV4PG');</script>
+<!-- End Google Tag Manager -->
+<!--end footer code-->
+<meta name="verifyownership" content="28211cea71f1d7245c209364988c2e42" />
+		<!-- Infolinks START -->
+		<script type="text/javascript">
+
+		   var infolink_pid =2251798;
+		   var infolink_wsid = 0;
+		   var infolinks_plugin_version = "WP_3.1";
+
+		</script>
+		<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+		<script type="text/javascript">
+							jQuery(document).ready(function(){ 
+							jQuery('.description').before('<span><!--INFOLINKS_OFF--></span>');jQuery('.description').after('<span><!--INFOLINKS_ON--></span>');jQuery('#headerimg').before('<span><!--INFOLINKS_OFF--></span>');jQuery('#headerimg').after('<span><!--INFOLINKS_ON--></span>');jQuery('h1').before('<span><!--INFOLINKS_OFF--></span>');jQuery('h1').after('<span><!--INFOLINKS_ON--></span>');jQuery('h1').before('<span><!--INFOLINKS_OFF--></span>');jQuery('h1').after('<span><!--INFOLINKS_ON--></span>');	
+								});
+						</script>
+		<!-- Infolinks END -->	<div style="display:none">
+	</div>
+<link rel='stylesheet' id='wp-subscribe-css'  href='http://buzzerg.com/wp-content/plugins/wp-subscribe/css/wp-subscribe.css?ver=4.0.7' type='text/css' media='all' />
+<script type='text/javascript' src='http://buzzerg.com/wp-content/plugins/easy-heads-up-bar/js/ehu.js?ver=2.1.5'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201534'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2015Augaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://buzzerg.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.0.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mts_ajax_loadposts = {"startPage":"1","maxPages":"5","nextLink":"http:\/\/buzzerg.com\/page\/2\/","autoLoad":"1","i18n_loadmore":"Load More","i18n_loading":"Loading...","i18n_nomore":"No more posts."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://buzzerg.com/wp-content/themes/sociallyviral/js/ajax.js?ver=4.0.7'></script>
+<script type='text/javascript' src='http://buzzerg.com/wp-content/themes/sociallyviral/js/history.js?ver=4.0.7'></script>
+
+	<script src="http://stats.wp.com/e-201534.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:3.2.1',blog:'78990630',post:'0',tz:'0'});
+	var load_cmc = function(){linktracker_init(78990630,0,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+<script type="text/javascript">/* CloudFlare analytics upgrade */
+</script>
+
+<script type="text/javascript">
+
+
+if(typeof $ezJQuery == 'undefined')
+{
+    if (typeof jQuery == 'undefined')
+    {
+        document.write('<scr'+'ipt type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></sc'+'ript>');
+    }
+    else
+    {
+        $ezJQuery = jQuery;
+    }
+}
+
+</script>
+
+<script type="text/javascript">
+
+
+if (typeof $ezJQuery == 'undefined' && typeof jQuery != 'undefined')
+{
+    $ezJQuery = jQuery.noConflict();
+}
+
+</script>
+
+<script type="text/javascript">
+if(typeof $ezJQuery != 'undefined')
+{
+    $ezJQuery("body").mousemove(function(e){
+      ez_last_activity_count = ez_tos_track_count;
+    });
+    $ezJQuery("body").keypress(function(e){
+      ez_last_activity_count = ez_tos_track_count;
+    });
+    $ezJQuery(window).scroll(function(e){
+      ez_last_activity_count = ez_tos_track_count;
+    });
+}
+else
+{
+    ez_last_activity_count = 8;
+}
+</script>
+<script type='text/javascript' src='http://cdn.buzzerg.com/utilcave_com/inc/tb.php?cb=2&template=orig'></script>
+<script>
+$ezJQuery(function() {
+    if (typeof run_body_onload == 'function') {
+        run_body_onload();
+    }
+    if (typeof ezoicJSPageLoad == 'function') {
+        ezoicJSPageLoad($ezJQuery);
+    }
+});
+</script>
+</body>
+</html>
+<!-- Dynamic page generated in 3.172 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-08-19 12:54:00 -->
+
+<!-- super cache -->
