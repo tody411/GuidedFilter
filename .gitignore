@@ -57,3 +57,6 @@ Temporary Items
 # Doxygen directory
 # doxygen/api_doc
 doxygen/*.bat
+
+# Datasets
+guited_filter/datasets/*/*
