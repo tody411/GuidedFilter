@@ -9,52 +9,103 @@ from guided_filter.datasets.google_image import dataFile
 
 import os
 import numpy as np
+import cv2
+import matplotlib.pyplot as plt
 
 from guided_filter.io_util.image import loadRGB
 from guided_filter.cv.image import to32F
 from guided_filter.util.timer import timing_func, Timer
 from guided_filter.core.filters import GuidedFilter, FastGuidedFilter
+from guided_filter.results.results import resultFile
 
 
-def performanceTestFilter(C_noise,  filter_name, filter, result):
+## Bilateral filter class with the same interface with GuidedFilter class.
+#
+#  Input I for the constructor will be discarded.
+class BilateralFilter:
+    def __init__(self, I, sigma_space=5, sigma_range=0.2):
+        self._sigma_range = sigma_range
+        self._sigma_space = sigma_space
+
+    def filter(self, I):
+        return cv2.bilateralFilter(I, 0, self._sigma_range, self._sigma_space)
+
+
+## Peformance test for the input image and the target filter.
+def performanceTestFilter(C_noise, filter):
     t = Timer()
     filter.filter(C_noise)
     t.stop()
-    result[filter_name] = str(t)
+    return t.seconds()
 
-def filterVariations(C_32F):
-    sigmas = [10, 40, 80]
-    filter_types = {"Simple": GuidedFilter, "Fast": FastGuidedFilter}
 
-    filters = {}
-
-    for type_name, filter in filter_types.items():
-        for sigma in sigmas:
-            filter_name = type_name + "_%s" % (sigma)
-            filters[filter_name] = filter(C_32F, sigma_space=sigma)
+## Generate filter variations for the target filter class, sigmas.
+def generateFilterVariations(C_32F, filter_class, sigmas):
+    filters = []
+    for sigma in sigmas:
+        filters.append(filter_class(C_32F, sigma_space=sigma))
     return filters
 
-def performanceTest(image_file):
-    image_name = os.path.basename(image_file)
-    image_name = os.path.splitext(image_name)[0]
 
-    C_8U = loadRGB(image_file)
-    C_32F = to32F(C_8U)
-    print "Image size: ", C_32F.shape[:2]
-
+## Performance test for the target sigmas.
+def performanceTestSigmas(C_32F, sigmas, filter_types, ax):
     h, w, cs = C_32F.shape
 
     C_noise = np.float32(C_32F + 0.3 * np.random.rand(h, w, cs))
     C_noise = np.clip(C_noise, 0.0, 1.0)
 
-    filters = filterVariations(C_32F)
-    result = {}
-    for filter_name, filter in filters.items():
-        performanceTestFilter(C_noise, filter_name, filter, result)
+    for type_name, filter_class_color in filter_types.items():
+        filter_class, color = filter_class_color
+        filters = generateFilterVariations(C_32F, filter_class, sigmas)
+        times = []
 
-    for filter_name, performance in sorted(result.items()):
-        print filter_name, performance
+        for filter in filters:
+            times.append(performanceTestFilter(C_noise, filter))
 
+        ax.plot(sigmas, times, label=type_name, color=color)
+
+    ax.set_xlabel('$\sigma_s$')
+    ax.set_ylabel('time (secs)')
+    ax.legend(bbox_to_anchor=(0.88, 0.8), loc=2)
+
+
+## Performance test for the image file.
+def performanceTest(image_file):
+    C_8U = loadRGB(image_file)
+    C_32F = to32F(C_8U)
+
+    h, w = C_32F.shape[:2]
+    image_size_str = "Image size: %s x %s" %(w, h)
+
+    fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(8, 8))
+    fig.subplots_adjust(left=0.1, right=0.7, top=0.85, hspace=0.4)
+
+    fig.suptitle("Peformance of guided filter\n%s" % image_size_str)
+
+    filter_types = {"Bilateral Filter": (BilateralFilter, "r"),
+                    "Guided Filter": (GuidedFilter, "g"),
+                    "Fast Guided Filter": (FastGuidedFilter, "b")}
+
+    sigmas = range(3, 21, 2)
+    axes[0].set_title('For small $\sigma_s$')
+
+    fig_title = "Peformance for small $\sigma_s$"
+    performanceTestSigmas(C_32F, sigmas, filter_types, axes[0])
+
+    sigmas = range(10, 100, 5)
+    result_name = "performance_large_sigma"
+    filter_types = {"Guided Filter": (GuidedFilter, "g"),
+                    "Fast Guided Filter": (FastGuidedFilter, "b")}
+
+    axes[1].set_title('For large $\sigma_s$')
+    performanceTestSigmas(C_32F, sigmas, filter_types, axes[1])
+
+    result_name = "performance"
+    result_file = resultFile(result_name)
+    plt.savefig(result_file)
+
+
+## Performance tests for the data names, IDs.
 def performanceTests(data_names, data_ids):
     for data_name in data_names:
         print "Performance tests: %s" % data_name
@@ -64,7 +115,7 @@ def performanceTests(data_names, data_ids):
             performanceTest(image_file)
 
 if __name__ == '__main__':
-    data_names = ["apple", "flower", "tulip"]
-    data_ids = [0, 1, 2]
+    data_names = ["apple"]
+    data_ids = [0]
 
     performanceTests(data_names, data_ids)

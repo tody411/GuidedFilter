@@ -22,17 +22,16 @@ In this demo package, I also implemented **Fast Guided Filter** [He et al. 2015]
 
 ### Performance
 
-Compare the original guided filter [He et al. 2010] and the fast version [He et al. 2015].
+Compare the performance of the following filters:
 
-|Filter type  |time (secs)|
-|-------------|-----------|
-|Original (sigma = 10)    |   0.215  |
-|Original (sigma = 40)    |   0.228  |
-|Original (sigma = 80)    |   0.254  |
-|Fast version (sigma = 10)    |  0.052 |
-|Fast version (sigma = 40)    |  0.053 |
-|Fast version (sigma = 80)    |  0.054 |
+* Bilateral filter: OpenCV implementation.
+* Guided filter [He et al. 2010]: Implemented in this package.
+* Fast guided filter [He et al. 2015]: Implemented in this package.
 
+![performance](guided_filter/results/performance.png)
+
+Compared with the bilateral filter, guided filters are **independent of filtering sigma for coordinates**.
+Fast guided filter leads to a speed up of 4x in this implementation.
 
 ## Installation
 
