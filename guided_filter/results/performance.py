@@ -115,7 +115,7 @@ def performanceTests(data_names, data_ids):
             performanceTest(image_file)
 
 if __name__ == '__main__':
-    data_names = ["apple"]
+    data_names = ["flower"]
     data_ids = [0]
 
     performanceTests(data_names, data_ids)

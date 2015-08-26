@@ -75,7 +75,7 @@ def runSmoothNoiseResults(data_names, data_ids):
 
 
 if __name__ == '__main__':
-    data_names = ["apple", "tulip", "flower"]
-    data_ids = [0, 1, 2]
+    data_names = ["flower"]
+    data_ids = range(3)
 
     runSmoothNoiseResults(data_names, data_ids)
