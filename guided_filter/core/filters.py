@@ -3,6 +3,8 @@
 ## @package guided_filter.core.filters
 #
 #  Implementation of guided filter.
+#  * GuidedFilter: Original guided filter.
+#  * FastGuidedFilter: Fast version of the guided filter.
 #  @author      tody
 #  @date        2015/08/26
 
@@ -64,6 +66,7 @@ class FastGuidedFilter:
             self._guided_filter = GuidedFilterColor(I_sub, sigma_space, sigma_range)
 
     ## Apply filter for the input image.
+    #  @param p Input image for the filtering.
     def filter(self, p):
         p_32F = to32F(p)
         shape_original = p.shape[:2]
@@ -101,6 +104,7 @@ class GuidedFilter:
             self._guided_filter = GuidedFilterColor(I_32F, sigma_space, sigma_range)
 
     ## Apply filter for the input image.
+    #  @param p Input image for the filtering.
     def filter(self, p):
         return self._guided_filter.filter(p)
 
@@ -115,6 +119,7 @@ class GuidedFilterCommon:
         self._guided_filter = guided_filter
 
     ## Apply filter for the input image.
+    #  @param p Input image for the filtering.
     def filter(self, p):
         p_32F = to32F(p)
         if _isGray(p_32F):
@@ -144,6 +149,8 @@ class GuidedFilterGray:
         self._initFilter()
         self._filter_common = GuidedFilterCommon(self)
 
+    ## Apply filter for the input image.
+    #  @param p Input image for the filtering.
     def filter(self, p):
         return self._filter_common.filter(p)
 
@@ -181,6 +188,8 @@ class GuidedFilterColor:
         self._initFilter()
         self._filter_common = GuidedFilterCommon(self)
 
+    ## Apply filter for the input image.
+    #  @param p Input image for the filtering.
     def filter(self, p):
         return self._filter_common.filter(p)
 

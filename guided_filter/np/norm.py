@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## @package som_cm.np.norm
+## @package guided_filter.np.norm
 #
 #  Norm functions.
 #  @author      tody

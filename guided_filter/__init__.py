@@ -1,8 +1,8 @@
 
 # -*- coding: utf-8 -*-
-## @package som_cm
+## @package guided_filter
 #
-#  SOM Color Manifold package.
+#  Guided filter package.
 #  @author      tody
 #  @date        2015/08/14
 

@@ -3,7 +3,7 @@
 # -*- coding: utf-8 -*-
 ## @package guided_filter.results.smooth_noise
 #
-#  guided_filter.results.smooth_noise utility package.
+#  Simple guided filter test.
 #  @author      tody
 #  @date        2015/08/26
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-## @package inversetoon.np
+## @package guided_filter.np
 #
 #  Modules for NumPy utility.
 #  @author      tody

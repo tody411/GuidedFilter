@@ -1,6 +1,6 @@
 
 # -*- coding: utf-8 -*-
-## @package som_cm.plot.window
+## @package guided_filter.plot.window
 #
 #  Matplot window functions.
 #  @author      tody
