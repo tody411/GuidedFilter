@@ -16,7 +16,7 @@ from guided_filter.results.results import resultFile
 from guided_filter.io_util.image import loadRGB
 from guided_filter.cv.image import to32F
 
-from guided_filter.core.filters import FastGuidedFilter
+from guided_filter.core.filters import FastGuidedFilter, GuidedFilter
 
 def runSmoothNoiseResult(image_file):
     image_name = os.path.basename(image_file)
@@ -28,12 +28,12 @@ def runSmoothNoiseResult(image_file):
     aspect = C_32F.shape[0] / float(C_32F.shape[1])
 
     fig_width = 10
-    fig_height = int(fig_width * aspect / 3) + 1
+    fig_height = int(2 * fig_width * aspect / 3) + 2
     fig = plt.figure(figsize=(fig_width, fig_height))
-    fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.02, hspace=0.05)
+    fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.02, hspace=0.15)
 
-    plt.subplot(131)
-    plt.title("%s" % (image_name))
+    plt.subplot(231)
+    plt.title("Original")
     plt.imshow(C_32F)
     plt.axis('off')
 
@@ -42,19 +42,24 @@ def runSmoothNoiseResult(image_file):
     C_noise = np.float32(C_32F + 0.3 * np.random.rand(h, w, cs))
     C_noise = np.clip(C_noise, 0.0, 1.0)
 
-    plt.subplot(132)
-    plt.title("Noise Image")
+    plt.subplot(232)
+    plt.title("Noise")
     plt.imshow(C_noise)
     plt.axis('off')
 
-    guided_filter = FastGuidedFilter(C_32F, sigma_space=10, sigma_range=0.05, scale=4)
-    C_smooth = guided_filter.filter(C_noise)
-    C_smooth = np.clip(C_smooth, 0.0, 1.0)
+    sigmas = [5, 10, 20]
 
-    plt.subplot(133)
-    plt.title("Filtered Image")
-    plt.imshow(C_smooth)
-    plt.axis('off')
+    plot_id = 234
+    for sigma in sigmas:
+        guided_filter = FastGuidedFilter(C_noise, sigma_space=sigma, sigma_range=0.02)
+        C_smooth = guided_filter.filter(C_noise)
+        C_smooth = np.clip(C_smooth, 0.0, 1.0)
+
+        plt.subplot(plot_id)
+        plt.title("Filtered (sigma=%s)" %sigma)
+        plt.imshow(C_smooth)
+        plt.axis('off')
+        plot_id +=1
 
     result_file = resultFile(image_name)
     plt.savefig(result_file)

@@ -12,13 +12,13 @@ In this demo package, I also implemented **Fast Guided Filter** [He et al. 2015]
 
 ### Simple guided filter test for noise image:
 
-* Original image as the guidance image.
-* Noise image from the original image.
-* Filtered output by the guided filter.
+1. Noise image from original image.
+2. Guided filter smooth the noise image like bilateral filter.
+    * Guidance image: Noise image.
+    * Filter sigma in the color space: constant 0.05.
+    * Filter sigma in the coordinate space: [5, 10, 20]
 
-![apple_0](guided_filter/results/apple_0.png)
-![flower_0](guided_filter/results/flower_0.png)
-![tulip_1](guided_filter/results/tulip_1.png)
+![flower_1](guided_filter/results/flower_1.png)
 
 ### Performance
 
