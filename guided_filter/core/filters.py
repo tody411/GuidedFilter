@@ -47,10 +47,10 @@ def _upSample(I, scale=2, shape=None):
 class FastGuidedFilter:
     ## Constructor.
     #  @param I Input guidance image. Color or gray.
-    #  @param sigma_space Filter sigma in the coordinate space.
-    #  @param sigma_range Filter sigma in the color space.
+    #  @param radius Radius of Guided Filter.
+    #  @param epsilon Regularization term of Guided Filter.
     #  @param scale Down sampled scale.
-    def __init__(self, I, sigma_space=5, sigma_range=0.4, scale=4):
+    def __init__(self, I, radius=5, epsilon=0.4, scale=4):
         I_32F = to32F(I)
         self._I = I_32F
         h, w = I.shape[:2]
@@ -58,12 +58,12 @@ class FastGuidedFilter:
         I_sub = _downSample(I_32F, scale)
 
         self._I_sub = I_sub
-        sigma_space = int(sigma_space / scale)
+        radius = int(radius / scale)
 
         if _isGray(I):
-            self._guided_filter = GuidedFilterGray(I_sub, sigma_space, sigma_range)
+            self._guided_filter = GuidedFilterGray(I_sub, radius, epsilon)
         else:
-            self._guided_filter = GuidedFilterColor(I_sub, sigma_space, sigma_range)
+            self._guided_filter = GuidedFilterColor(I_sub, radius, epsilon)
 
     ## Apply filter for the input image.
     #  @param p Input image for the filtering.
@@ -93,15 +93,15 @@ class FastGuidedFilter:
 class GuidedFilter:
     ## Constructor.
     #  @param I Input guidance image. Color or gray.
-    #  @param sigma_space Filter sigma in the coordinate space.
-    #  @param sigma_range Filter sigma in the color space.
-    def __init__(self, I, sigma_space=5, sigma_range=0.4):
+    #  @param radius Radius of Guided Filter.
+    #  @param epsilon Regularization term of Guided Filter.
+    def __init__(self, I, radius=5, epsilon=0.4):
         I_32F = to32F(I)
 
         if _isGray(I):
-            self._guided_filter = GuidedFilterGray(I_32F, sigma_space, sigma_range)
+            self._guided_filter = GuidedFilterGray(I_32F, radius, epsilon)
         else:
-            self._guided_filter = GuidedFilterColor(I_32F, sigma_space, sigma_range)
+            self._guided_filter = GuidedFilterColor(I_32F, radius, epsilon)
 
     ## Apply filter for the input image.
     #  @param p Input image for the filtering.
@@ -140,11 +140,11 @@ class GuidedFilterCommon:
 ## Guided filter for gray guidance image.
 class GuidedFilterGray:
     #  @param I Input gray guidance image.
-    #  @param sigma_space Filter sigma in the coordinate space.
-    #  @param sigma_range Filter sigma in the color space.
-    def __init__(self, I, sigma_space=5, sigma_range=0.4):
-        self._sigma_space = 2 * sigma_space + 1
-        self._sigma_range = sigma_range
+    #  @param radius Radius of Guided Filter.
+    #  @param epsilon Regularization term of Guided Filter.
+    def __init__(self, I, radius=5, epsilon=0.4):
+        self._radius = 2 * radius + 1
+        self._epsilon = epsilon
         self._I = to32F(I)
         self._initFilter()
         self._filter_common = GuidedFilterCommon(self)
@@ -156,16 +156,16 @@ class GuidedFilterGray:
 
     def _initFilter(self):
         I = self._I
-        r = self._sigma_space
+        r = self._radius
         self._I_mean = cv2.blur(I, (r, r))
         I_mean_sq = cv2.blur(I ** 2, (r, r))
         self._I_var = I_mean_sq - self._I_mean ** 2
 
     def _computeCoefficients(self, p):
-        r = self._sigma_space
+        r = self._radius
         p_mean = cv2.blur(p, (r, r))
         p_cov = p_mean - self._I_mean * p_mean
-        a = p_cov / (self._I_var + self._sigma_range)
+        a = p_cov / (self._I_var + self._epsilon)
         b = p_mean - a * self._I_mean
         a_mean = cv2.blur(a, (r, r))
         b_mean = cv2.blur(b, (r, r))
@@ -179,11 +179,11 @@ class GuidedFilterGray:
 ## Guided filter for color guidance image.
 class GuidedFilterColor:
     #  @param I Input color guidance image.
-    #  @param sigma_space Filter sigma in the coordinate space.
-    #  @param sigma_range Filter sigma in the color space.
-    def __init__(self, I, sigma_space=5, sigma_range=0.2):
-        self._sigma_space = 2 * sigma_space + 1
-        self._sigma_range = sigma_range
+   #  @param radius Radius of Guided Filter.
+    #  @param epsilon Regularization term of Guided Filter.
+    def __init__(self, I, radius=5, epsilon=0.2):
+        self._radius = 2 * radius + 1
+        self._epsilon = epsilon
         self._I = to32F(I)
         self._initFilter()
         self._filter_common = GuidedFilterCommon(self)
@@ -195,8 +195,8 @@ class GuidedFilterColor:
 
     def _initFilter(self):
         I = self._I
-        r = self._sigma_space
-        eps = self._sigma_range
+        r = self._radius
+        eps = self._epsilon
 
         Ir, Ig, Ib = I[:, :, 0], I[:, :, 1], I[:, :, 2]
 
@@ -234,7 +234,7 @@ class GuidedFilterColor:
         self._Ibb_inv = Ibb_inv
 
     def _computeCoefficients(self, p):
-        r = self._sigma_space
+        r = self._radius
         I = self._I
         Ir, Ig, Ib = I[:, :, 0], I[:, :, 1], I[:, :, 2]
 

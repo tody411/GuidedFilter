@@ -30,7 +30,10 @@ def runSmoothNoiseResult(image_file):
     fig_width = 10
     fig_height = int(2 * fig_width * aspect / 3) + 2
     fig = plt.figure(figsize=(fig_width, fig_height))
-    fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.95, wspace=0.02, hspace=0.15)
+    fig.subplots_adjust(left=0.05, bottom=0.05, right=0.95, top=0.82, wspace=0.02, hspace=0.3)
+    h, w = C_32F.shape[:2]
+    image_size_str = "Image size: %s x %s" %(w, h)
+    fig.suptitle("Filtering noise image\n%s" % image_size_str)
 
     plt.subplot(231)
     plt.title("Original")
@@ -51,12 +54,12 @@ def runSmoothNoiseResult(image_file):
 
     plot_id = 234
     for sigma in sigmas:
-        guided_filter = FastGuidedFilter(C_noise, sigma_space=sigma, sigma_range=0.02)
+        guided_filter = FastGuidedFilter(C_noise, radius=sigma, epsilon=0.02)
         C_smooth = guided_filter.filter(C_noise)
         C_smooth = np.clip(C_smooth, 0.0, 1.0)
 
         plt.subplot(plot_id)
-        plt.title("Filtered (sigma=%s)" %sigma)
+        plt.title("Filtered ($r$=%s)" %sigma)
         plt.imshow(C_smooth)
         plt.axis('off')
         plot_id +=1

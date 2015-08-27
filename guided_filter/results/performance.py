@@ -23,12 +23,12 @@ from guided_filter.results.results import resultFile
 #
 #  Input I for the constructor will be discarded.
 class BilateralFilter:
-    def __init__(self, I, sigma_space=5, sigma_range=0.2):
-        self._sigma_range = sigma_range
-        self._sigma_space = sigma_space
+    def __init__(self, I, radius=5, epsilon=0.2):
+        self._epsilon = epsilon
+        self._radius = radius
 
     def filter(self, I):
-        return cv2.bilateralFilter(I, 0, self._sigma_range, self._sigma_space)
+        return cv2.bilateralFilter(I, 0, self._epsilon, self._radius)
 
 
 ## Peformance test for the input image and the target filter.
@@ -43,7 +43,7 @@ def performanceTestFilter(C_noise, filter):
 def generateFilterVariations(C_32F, filter_class, sigmas):
     filters = []
     for sigma in sigmas:
-        filters.append(filter_class(C_32F, sigma_space=sigma))
+        filters.append(filter_class(C_32F, radius=sigma))
     return filters
 
 
@@ -64,7 +64,7 @@ def performanceTestSigmas(C_32F, sigmas, filter_types, ax):
 
         ax.plot(sigmas, times, label=type_name, color=color)
 
-    ax.set_xlabel('$\sigma_s$')
+    ax.set_xlabel('radius $r$')
     ax.set_ylabel('time (secs)')
     ax.legend(bbox_to_anchor=(0.88, 0.8), loc=2)
 
@@ -78,7 +78,7 @@ def performanceTest(image_file):
     image_size_str = "Image size: %s x %s" %(w, h)
 
     fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(8, 8))
-    fig.subplots_adjust(left=0.1, right=0.7, top=0.85, hspace=0.4)
+    fig.subplots_adjust(left=0.1, right=0.7, top=0.86, hspace=0.4)
 
     fig.suptitle("Peformance of guided filter\n%s" % image_size_str)
 
@@ -86,18 +86,17 @@ def performanceTest(image_file):
                     "Guided Filter": (GuidedFilter, "g"),
                     "Fast Guided Filter": (FastGuidedFilter, "b")}
 
-    sigmas = range(3, 21, 2)
-    axes[0].set_title('For small $\sigma_s$')
+    sigmas = range(3, 31, 2)
+    axes[0].set_title('For small radius $r$')
 
-    fig_title = "Peformance for small $\sigma_s$"
     performanceTestSigmas(C_32F, sigmas, filter_types, axes[0])
 
     sigmas = range(10, 100, 5)
-    result_name = "performance_large_sigma"
+
     filter_types = {"Guided Filter": (GuidedFilter, "g"),
                     "Fast Guided Filter": (FastGuidedFilter, "b")}
 
-    axes[1].set_title('For large $\sigma_s$')
+    axes[1].set_title('For large radius $r$')
     performanceTestSigmas(C_32F, sigmas, filter_types, axes[1])
 
     result_name = "performance"

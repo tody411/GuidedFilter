@@ -15,8 +15,8 @@ In this demo package, I also implemented **Fast Guided Filter** [He et al. 2015]
 1. Noise image from original image.
 2. Guided filter smooth the noise image like bilateral filter.
     * Guidance image: Noise image.
-    * Filter sigma in the color space: constant 0.05.
-    * Filter sigma in the coordinate space: [5, 10, 20]
+    * Epsilon (regularization term similar to the sigma in the color space): Constant 0.05.
+    * Radius (similar to the sigma in the coordinate space): [5, 10, 20]
 
 ![flower_1](guided_filter/results/flower_1.png)
 
