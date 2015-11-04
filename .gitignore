@@ -62,5 +62,3 @@ doxygen/*.bat
 guided_filter/datasets/*/*
 guided_filter/datasets/.cache/*
 guided_filter/.cache/*
-
-
